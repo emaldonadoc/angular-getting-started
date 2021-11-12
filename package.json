@@ -8,8 +8,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "e2e": "ng e2e"
+    "test": "jest --config ./jest.config.js --verbose"
   },
   "private": true,
   "dependencies": {
@@ -27,21 +26,19 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-builders/jest": "^13.0.0",
     "@angular-devkit/build-angular": "~13.0.0-rc.0",
     "@angular/cli": "~13.0.0-rc.0",
     "@angular/compiler-cli": "~13.0.0-next.0",
     "@schematics/angular": "^13.0.1",
-    "@types/jasmine": "~3.9.0",
+    "@types/jest": "^27.0.2",
     "@types/node": "^12.11.1",
-    "jasmine-core": "~3.9.0",
     "jasmine-marbles": "~0.8.3",
-    "jasmine-spec-reporter": "~7.0.0",
-    "karma": "~6.3.0",
-    "karma-chrome-launcher": "~3.1.0",
+    "jest": "^27.3.1",
+    "jest-preset-angular": "^11.0.0-rc.1",
     "karma-coverage": "~2.0.3",
-    "karma-jasmine": "~4.0.0",
-    "karma-jasmine-html-reporter": "~1.7.0",
     "protractor": "~7.0.0",
+    "ts-jest": "^27.0.7",
     "ts-node": "~10.1.0",
     "typescript": "~4.4.3"
   }
