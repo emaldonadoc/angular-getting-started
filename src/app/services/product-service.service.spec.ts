@@ -24,21 +24,23 @@ const mockProductsResponse = [
 ];
 
 describe('ProductServiceService', () => {
-  let service: ProductServiceService;
   
   const httpClient: any ={
     get: jest.fn((url:string)=> ({ pipe: (r, e) => of(mockProductsResponse)}))
 };
 
-  beforeEach(() => {
-    service = new ProductServiceService(httpClient);
-  });
+  const wrapperService = () => {
+    return new ProductServiceService(httpClient);
+  };
 
   it('should be created', () => {
+    let service = wrapperService();
     expect(service).toBeTruthy();
   });
 
   it('should fetch product list', async () => {
+    let service = wrapperService();
+
     const products = await lastValueFrom(service.fetchProducts());
     expect(httpClient.get).toHaveBeenCalledWith('http://localhost:3000/products');
     expect(products.length).toBe(3);
