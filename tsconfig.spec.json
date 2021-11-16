@@ -2,8 +2,9 @@
     "extends": "./tsconfig.base.json",
     "compilerOptions": {
       "outDir": "./out-tsc/spec",
+      "baseUrl": "./",
       "types": [
-        "jest"
+        "jest", "node"
       ]
     },
     "files": [

@@ -13,14 +13,14 @@ export class ProductServiceService {
 
   constructor(private http: HttpClient) { }
 
-  private httpOptions = {
+  private readonly httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   }  
 
   fetchProducts(): Observable<Product[]>{
-    return this.http.get<Product[]>(this.apiURL + '/product') .pipe(
+    return this.http.get<Product[]>(this.apiURL + '/products').pipe(
       retry(0),
       catchError(this.handleError)
     )
