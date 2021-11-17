@@ -22,14 +22,5 @@ export class ProductServiceService {
   fetchProducts(): Observable<Product[]>{
     return this.http.get<Product[]>(this.apiURL + '/products', this.httpOptions)
   }
-
-  private handleError(error) {
-    let errorMessage = '';
-    if(error.error instanceof ErrorEvent) {
-      errorMessage = error.error.message;
-    } else {
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    return throwError(()=> errorMessage);
- }
+  
 }
