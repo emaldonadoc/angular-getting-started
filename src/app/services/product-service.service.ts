@@ -20,10 +20,7 @@ export class ProductServiceService {
   }  
 
   fetchProducts(): Observable<Product[]>{
-    return this.http.get<Product[]>(this.apiURL + '/products').pipe(
-      retry(0),
-      catchError(this.handleError)
-    )
+    return this.http.get<Product[]>(this.apiURL + '/products', this.httpOptions)
   }
 
   private handleError(error) {
